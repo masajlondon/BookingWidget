@@ -1,0 +1,2 @@
+# BookingWidget
+variable price
