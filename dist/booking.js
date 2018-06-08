@@ -621,6 +621,8 @@ var clickTimeslot = function(eventData) {
 
 	    form.submit(function(e) {
 				e.preventDefault();
+				showLoadingScreen();
+		    		
 
 				//https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-qSs3_Q47_eQfU4WAFs0g3wwGbhhLo245KKWvC0kbGbgpifnEe0n6xdqMbl_DkFWnDlOTPtFnrpCs/pub?output=tsv
 				var formElement = $(form);
