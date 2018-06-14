@@ -29448,14 +29448,14 @@ var clickTimeslot = function(eventData) {
 	    },
 	    comment: {
 	      enabled: true,
-	      placeholder: 'How Did You Find Us',
+	      placeholder: 'How Did You Find Us?',
 	      prefilled: false,
 	      required: false,
 	      locked: false
 	    },
 	    phone: {
 	      enabled: true,
-	      placeholder: 'Date Of Birth',
+	      placeholder: 'Date Of Birth (e.g. 12/02/1989)',
 	      prefilled: false,
 	      required: true,
 	      locked: false
