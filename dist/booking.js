@@ -29455,7 +29455,7 @@ var clickTimeslot = function(eventData) {
 	    },
 	    phone: {
 	      enabled: true,
-	      placeholder: 'Date Of Birth (e.g. 12/02/1989)',
+	      placeholder: 'Phone Number',
 	      prefilled: false,
 	      required: true,
 	      locked: false
