@@ -5777,9 +5777,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
  			var googlerequest;
  			googlerequest = $.ajax({
- 					url: "https://script.google.com/macros/s/AKfycbzLdDOTcgtPa9GDapoxjEKeE3iQ3q6h4ko00VPrGEK8-a-plzQe/exec",
+ 					url: "https://script.google.com/macros/s/AKfycbyW_d_Ysbo1u3ZI0a-pL_BU7H1dvHZzEz_gwh_ZwMx3skXM1I8/exec",
  					type: "post",
-
  					data: googleData,
  					success: function(data) {
  							console.log(data);
