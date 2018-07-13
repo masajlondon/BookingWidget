@@ -5517,11 +5517,9 @@ return /******/ (function(modules) { // webpackBootstrap
 				var formElement = $(form);
 				if (!formElement.hasClass('success')){
 				e.preventDefault();
-				$(ot).addClass('loading');
 				var config = getConfig();
 				//https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-qSs3_Q47_eQfU4WAFs0g3wwGbhhLo245KKWvC0kbGbgpifnEe0n6xdqMbl_DkFWnDlOTPtFnrpCs/pub?output=tsv
 
-				formElement.addClass('loading');
 				var formData = {};
 				$.each(formElement.serializeArray(), function(i, field) {
 					formData[field.name] = field.value;
@@ -5552,7 +5550,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    });
 			var handlepayment = function(ot, formData, formElement, e, eventData, bookingVoucherPrice){
 					if (parseInt(bookingVoucherPrice) <= 1){
-						formElement.removeClass('loading');
 						submitBookingForm(formData, ot, e, eventData, 0);
 						formElement.find('.booked-email').html(formData.email);
 						formElement.removeClass('loading').addClass('success');
@@ -5573,7 +5570,6 @@ return /******/ (function(modules) { // webpackBootstrap
 											stripePrice: bookingVoucherPrice*100
 										}
 									}).then(function(stripeCustomer) {
-										formElement.addClass('loading');
 										submitBookingForm(formData, ot, e, eventData, bookingVoucherPrice);
 										formElement.find('.booked-email').html(formData.email);
 										formElement.removeClass('loading').addClass('success');
