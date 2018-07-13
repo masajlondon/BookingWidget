@@ -5518,8 +5518,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				if (!formElement.hasClass('success')){
 				e.preventDefault();
 				var config = getConfig();
-				//https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-qSs3_Q47_eQfU4WAFs0g3wwGbhhLo245KKWvC0kbGbgpifnEe0n6xdqMbl_DkFWnDlOTPtFnrpCs/pub?output=tsv
-
+				$(ot).addClass('loading');
 				var formData = {};
 				$.each(formElement.serializeArray(), function(i, field) {
 					formData[field.name] = field.value;
@@ -5552,6 +5551,7 @@ return /******/ (function(modules) { // webpackBootstrap
 					if (parseInt(bookingVoucherPrice) <= 1){
 						submitBookingForm(formData, ot, e, eventData, 0);
 						formElement.find('.booked-email').html(formData.email);
+						$(ot).removeClass('loading').addClass('success');
 						formElement.removeClass('loading').addClass('success');
 
 					} else {
