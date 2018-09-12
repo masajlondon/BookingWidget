@@ -5542,12 +5542,15 @@ return /******/ (function(modules) { // webpackBootstrap
 										console.log(data);
 										stripePrice = data;
 									}
+									timekitFetchAvailability();
 									handlepayment(ot, formData, formElement, e, eventData, stripePrice);
 						}
 					});
 				}
 	    });
+
 			var handlepayment = function(ot, formData, formElement, e, eventData, bookingVoucherPrice){
+					timekitFetchAvailability();
 					if (parseInt(bookingVoucherPrice) <= 1){
 						formElement.addClass('loading');
 						submitBookingForm(formData, ot, e, eventData, 0);
