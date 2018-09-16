@@ -5118,7 +5118,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (getConfig().project_id) args.project_id = getConfig().project_id
 	    if (getConfig().resources) args.resources = getConfig().resources
 	    if (getConfig().availability_constraints) args.constraints = getConfig().availability_constraints
-
+			console.log(args);
 	    $.extend(args, getConfig().availability);
 
 	    utils.doCallback('fetchAvailabilityStarted', args);
@@ -5542,15 +5542,36 @@ return /******/ (function(modules) { // webpackBootstrap
 										console.log(data);
 										stripePrice = data;
 									}
-									timekitFetchAvailability();
 									handlepayment(ot, formData, formElement, e, eventData, stripePrice);
 						}
 					});
 				}
 	    });
 
+			var checkStillAvailable = function(eventData){
+				console.log(eventData);
+				sdk
+			 .makeRequest({
+				 method: 'post',
+				 url: '/availability',
+				 data: eventData
+			 })
+			 .then(function(response){
+				 console.log(response);
+				 utils.doCallback('fetchAvailabilitySuccessful', response);
+
+				 // Render available timeslots in FullCalendar
+				 //if(response.data.length > 0) renderCalendarEvents(response.data);
+
+			 }).catch(function(response){
+				 utils.doCallback('fetchAvailabilityFailed', response);
+				 hideLoadingScreen();
+				 triggerError(['An error with Timekit Fetch Availability occured', response]);
+			 });
+			};
+
 			var handlepayment = function(ot, formData, formElement, e, eventData, bookingVoucherPrice){
-					timekitFetchAvailability();
+					console.log(timekitFetchAvailability())
 					if (parseInt(bookingVoucherPrice) <= 1){
 						formElement.addClass('loading');
 						submitBookingForm(formData, ot, e, eventData, 0);
