@@ -5546,7 +5546,7 @@ return /******/ (function(modules) { // webpackBootstrap
 										handlepayment(ot, formData, formElement, e, eventData, stripePrice);
 									} else {
 										hideLoadingScreen();
-					 				 triggerError(['Timeslot has now been taken. Please go back and choose another.']);
+										alert('This slot has now been taken, please go back and choose another.')
 									}
 						}
 					});
@@ -5579,7 +5579,6 @@ return /******/ (function(modules) { // webpackBootstrap
 			 }).catch(function(response){
 				 utils.doCallback('fetchAvailabilityFailed', response);
 				 hideLoadingScreen();
-				 triggerError(['An error with Timekit Fetch Availability occured', response]);
 			 });
 			};
 
