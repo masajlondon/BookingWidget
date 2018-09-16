@@ -5551,10 +5551,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 			var checkStillAvailable = function(eventData){
 				var args = {};
-		    if (getConfig().project_id) args.project_id = "f2cbf638-7bc9-41b0-986d-537d57622811"//getConfig().project_id
+		    if (getConfig().project_id) args.project_id = getConfig().project_id
 		    if (getConfig().resources) args.resources = getConfig().resources
 				args.from = eventData.starttime;
 				args.to = eventData.endtime;
+				args.timeslot_increments = '15 minutes';
 
 				sdk
 			 .makeRequest({
