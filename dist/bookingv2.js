@@ -5542,7 +5542,7 @@ return /******/ (function(modules) { // webpackBootstrap
 										console.log(data);
 										stripePrice = data;
 									}
-									//checkStillAvailable(eventData);
+									checkStillAvailable(eventData);
 									handlepayment(ot, formData, formElement, e, eventData, stripePrice);
 						}
 					});
@@ -5577,7 +5577,6 @@ return /******/ (function(modules) { // webpackBootstrap
 			};
 
 			var handlepayment = function(ot, formData, formElement, e, eventData, bookingVoucherPrice){
-					console.log(timekitFetchAvailability())
 					if (parseInt(bookingVoucherPrice) <= 1){
 						formElement.addClass('loading');
 						submitBookingForm(formData, ot, e, eventData, 0);
