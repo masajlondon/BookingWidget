@@ -5554,8 +5554,8 @@ return /******/ (function(modules) { // webpackBootstrap
 				var args = {};
 		    if (getConfig().project_id) args.project_id = getConfig().project_id
 		    if (getConfig().resources) args.resources = getConfig().resources
-				args.between_timestamps.start = eventData.starttime;
-				args.between_timestamps.end = eventData.endtime;
+				args.start = eventData.starttime;
+				args.end = eventData.endtime;
 				console.log(eventData);
 
 				sdk
