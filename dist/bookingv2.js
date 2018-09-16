@@ -5576,7 +5576,6 @@ return /******/ (function(modules) { // webpackBootstrap
 						 return true;
 					 }
 				 }
-				 return false;
 			 }).catch(function(response){
 				 utils.doCallback('fetchAvailabilityFailed', response);
 				 hideLoadingScreen();
