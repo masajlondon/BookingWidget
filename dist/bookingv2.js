@@ -5568,7 +5568,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				 console.log(response);
 				 var i;
 				 for (i = 0; i < response.length; i++) {
-					 console.log(i);
+					 console.log(response[i]);
 				 }
 				 //utils.doCallback('fetchAvailabilitySuccessful', response);
 
