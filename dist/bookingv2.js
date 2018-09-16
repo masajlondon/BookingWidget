@@ -5542,19 +5542,19 @@ return /******/ (function(modules) { // webpackBootstrap
 										console.log(data);
 										stripePrice = data;
 									}
-									var bool = checkStillAvailable(eventData);
-									console.log(bool);
-									if (bool === true){
-										handlepayment(ot, formData, formElement, e, eventData, stripePrice);
-									} else {
-										hideLoadingScreen();
-									}
+									var bool = checkStillAvailable(ot, formData, formElement, e, eventData, stripePrice);
+									// console.log(bool);
+									// if (bool === true){
+									// 	handlepayment(ot, formData, formElement, e, eventData, stripePrice);
+									// } else {
+									// 	hideLoadingScreen();
+									// }
 						}
 					});
 				}
 	    });
 
-			var checkStillAvailable = function(eventData){
+			var checkStillAvailable = function(ot, formData, formElement, e, eventData, stripePrice){
 				var args = {};
 		    if (getConfig().project_id) args.project_id = getConfig().project_id
 		    if (getConfig().resources) args.resources = getConfig().resources
@@ -5574,6 +5574,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				 for (i = 0; i < response.data.length; i++) {
 					 if (response.data[i].start.substring(0, response.data[i].start.indexOf('+')) === eventData.start.format().substring(0, eventData.start.format().indexOf('+')) && response.data[i].end.substring(0, response.data[i].end.indexOf('+')) === eventData.end.format().substring(0, eventData.end.format().indexOf('+'))){
 						 console.log(eventData.start.format().substring(0, eventData.start.format().indexOf('+')));
+						 handlepayment(ot, formData, formElement, e, eventData, stripePrice);
 						 return true;
 					 }
 				 }
