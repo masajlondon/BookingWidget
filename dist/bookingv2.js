@@ -5555,7 +5555,6 @@ return /******/ (function(modules) { // webpackBootstrap
 		    if (getConfig().resources) args.resources = getConfig().resources
 				args.from = eventData.starttime;
 				args.to = eventData.endtime;
-				console.log(eventData);
 
 				sdk
 			 .makeRequest({
@@ -5564,6 +5563,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				 data: args
 			 })
 			 .then(function(response){
+				 console.log(response);
 				 var i;
 				 for (i = 0; i < response.data.length; i++) {
 					 if (response.data[i].start.substring(0, response.data[i].start.indexOf('+')) === eventData.start.format().substring(0, eventData.start.format().indexOf('+'))){ //&& response.data[i].end.substring(0, response.data[i].end.indexOf('+')) === eventData.end.format().substring(0, eventData.end.format().indexOf('+'))){
