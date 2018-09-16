@@ -5565,9 +5565,9 @@ return /******/ (function(modules) { // webpackBootstrap
 			 })
 			 .then(function(response){
 				 var i;
-				 console.log(eventData.starttime);
+				 console.log(eventData.start);
 				 for (i = 0; i < response.data.length; i++) {
-					 if (response.data[i].start == eventData.start.format() && response.data[i].end == eventData.end.format()){
+					 if (response.data[i].start.substring(0, response.data[i].start.indexOf('+')) == eventData.start.format().substring(0, eventData.start.format().indexOf('+')) && response.data[i].end.substring(0, response.data[i].end.indexOf('+')) == eventData.end.format().substring(0, eventData.end.format().indexOf('+'))){
 						 console.log(response.data[i]);
 					 }
 				 }
