@@ -5567,7 +5567,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				 var i;
 				 console.log(eventData.starttime);
 				 for (i = 0; i < response.data.length; i++) {
-					 if (response.data[i].start == eventData.starttime && response.data[i].end == eventData.endtime){
+					 if (response.data[i].start == eventData.start.format() && response.data[i].end == eventData.end.format()){
 						 console.log(response.data[i]);
 					 }
 				 }
