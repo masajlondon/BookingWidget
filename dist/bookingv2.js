@@ -5568,7 +5568,9 @@ return /******/ (function(modules) { // webpackBootstrap
 				 console.log(response);
 				 var i;
 				 for (i = 0; i < response.data.length; i++) {
-					 console.log(response.data[i]);
+					 if (response.data[i].start == eventData.starttime && response.data[i].end == eventData.endtime){
+						 console.log(response.data[i]);
+					 }
 				 }
 				 //utils.doCallback('fetchAvailabilitySuccessful', response);
 
