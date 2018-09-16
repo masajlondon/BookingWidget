@@ -5556,6 +5556,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		    if (getConfig().resources) args.resources = getConfig().resources
 				args.from = eventData.starttime;
 				args.to = eventData.endtime;
+				console.log(eventData);
 
 				sdk
 			 .makeRequest({
