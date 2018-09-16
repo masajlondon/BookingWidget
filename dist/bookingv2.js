@@ -5542,7 +5542,7 @@ return /******/ (function(modules) { // webpackBootstrap
 										console.log(data);
 										stripePrice = data;
 									}
-									if (checkStillAvailable(eventData)){
+									if (checkStillAvailable(eventData) === true){
 										handlepayment(ot, formData, formElement, e, eventData, stripePrice);
 									} else {
 										hideLoadingScreen();
