@@ -5561,7 +5561,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				sdk
 			 .makeRequest({
 				 method: 'post',
-				 url: '/availability',
+				 url: '/findtime',
 				 data: args
 			 })
 			 .then(function(response){
