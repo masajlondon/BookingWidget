@@ -5542,7 +5542,7 @@ return /******/ (function(modules) { // webpackBootstrap
 										console.log(data);
 										stripePrice = data;
 									}
-									checkStillAvailable(eventData);
+									//checkStillAvailable(eventData);
 									handlepayment(ot, formData, formElement, e, eventData, stripePrice);
 						}
 					});
