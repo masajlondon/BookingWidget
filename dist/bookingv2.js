@@ -5542,11 +5542,11 @@ return /******/ (function(modules) { // webpackBootstrap
 										console.log(data);
 										stripePrice = data;
 									}
+									console.log(checkStillAvailable(eventData));
 									if (checkStillAvailable(eventData) === true){
 										handlepayment(ot, formData, formElement, e, eventData, stripePrice);
 									} else {
 										hideLoadingScreen();
-										alert('This slot has now been taken, please go back and choose another.')
 									}
 						}
 					});
