@@ -5566,6 +5566,9 @@ return /******/ (function(modules) { // webpackBootstrap
 			 })
 			 .then(function(response){
 				 console.log(response);
+				 for (i = 0; i < response.length; i++) {
+					 console.log(i);
+				 }
 				 //utils.doCallback('fetchAvailabilitySuccessful', response);
 
 				 // Render available timeslots in FullCalendar
