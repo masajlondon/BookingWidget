@@ -5554,10 +5554,9 @@ return /******/ (function(modules) { // webpackBootstrap
 				var args = {};
 		    if (getConfig().project_id) args.project_id = getConfig().project_id
 		    if (getConfig().resources) args.resources = getConfig().resources
-		    if (getConfig().availability_constraints) args.constraints = getConfig().availability_constraints
 				args.start = eventData.starttime;
 				args.end = eventData.endtime;
-
+				
 				sdk
 			 .makeRequest({
 				 method: 'post',
