@@ -5118,7 +5118,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (getConfig().project_id) args.project_id = getConfig().project_id
 	    if (getConfig().resources) args.resources = getConfig().resources
 	    if (getConfig().availability_constraints) args.constraints = getConfig().availability_constraints
-			console.log(args);
+
 	    $.extend(args, getConfig().availability);
 
 	    utils.doCallback('fetchAvailabilityStarted', args);
@@ -5542,6 +5542,7 @@ return /******/ (function(modules) { // webpackBootstrap
 										console.log(data);
 										stripePrice = data;
 									}
+									checkStillAvailable(eventData);
 									handlepayment(ot, formData, formElement, e, eventData, stripePrice);
 						}
 					});
@@ -5550,15 +5551,20 @@ return /******/ (function(modules) { // webpackBootstrap
 
 			var checkStillAvailable = function(eventData){
 				console.log(eventData);
+				var args = {};
+		    if (getConfig().project_id) args.project_id = getConfig().project_id
+		    if (getConfig().resources) args.resources = getConfig().resources
+		    if (getConfig().availability_constraints) args.constraints = getConfig().availability_constraints
+
 				sdk
 			 .makeRequest({
 				 method: 'post',
 				 url: '/availability',
-				 data: eventData
+				 data: args
 			 })
 			 .then(function(response){
 				 console.log(response);
-				 utils.doCallback('fetchAvailabilitySuccessful', response);
+				 //utils.doCallback('fetchAvailabilitySuccessful', response);
 
 				 // Render available timeslots in FullCalendar
 				 //if(response.data.length > 0) renderCalendarEvents(response.data);
