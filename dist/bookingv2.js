@@ -5550,7 +5550,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    });
 
 			var checkStillAvailable = function(eventData){
-				console.log(eventData);
 				var args = {};
 		    if (getConfig().project_id) args.project_id = getConfig().project_id
 		    if (getConfig().resources) args.resources = getConfig().resources
@@ -5565,8 +5564,8 @@ return /******/ (function(modules) { // webpackBootstrap
 				 data: args
 			 })
 			 .then(function(response){
-				 console.log(response);
 				 var i;
+				 console.log(eventData.starttime);
 				 for (i = 0; i < response.data.length; i++) {
 					 if (response.data[i].start == eventData.starttime && response.data[i].end == eventData.endtime){
 						 console.log(response.data[i]);
