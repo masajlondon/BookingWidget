@@ -5544,6 +5544,7 @@ return /******/ (function(modules) { // webpackBootstrap
 										stripePrice = data;
 									}
 									bool = checkStillAvailable(ot, formData, formElement, e, eventData, stripePrice);
+									console.log(bool);
 
 									// if (bool === true){
 									// 	handlepayment(ot, formData, formElement, e, eventData, stripePrice);
@@ -5552,7 +5553,6 @@ return /******/ (function(modules) { // webpackBootstrap
 									// }
 						}
 					});
-					console.log(bool);
 				}
 	    });
 
