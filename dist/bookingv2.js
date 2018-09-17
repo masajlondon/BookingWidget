@@ -5543,7 +5543,7 @@ return /******/ (function(modules) { // webpackBootstrap
 										stripePrice = data;
 									}
 									var bool = checkStillAvailable(ot, formData, formElement, e, eventData, stripePrice);
-									// console.log(bool);
+									console.log(bool);
 									// if (bool === true){
 									// 	handlepayment(ot, formData, formElement, e, eventData, stripePrice);
 									// } else {
@@ -5554,7 +5554,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				}
 	    });
 
-			var checkStillAvailable = function(ot, formData, formElement, e, eventData, stripePrice){
+			function checkStillAvailable(ot, formData, formElement, e, eventData, stripePrice){
 				var args = {};
 		    if (getConfig().project_id) args.project_id = getConfig().project_id
 		    if (getConfig().resources) args.resources = getConfig().resources
