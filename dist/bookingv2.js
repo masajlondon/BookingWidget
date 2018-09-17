@@ -5527,6 +5527,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				var goodBookingVoucher = 0;
 
 				var googlerequest;
+				var bool;
 				var stripePrice;
 				var voucherRequest = new Object();
 				voucherRequest.voucher = formData.voip;
@@ -5542,8 +5543,8 @@ return /******/ (function(modules) { // webpackBootstrap
 										console.log(data);
 										stripePrice = data;
 									}
-									var bool = checkStillAvailable(ot, formData, formElement, e, eventData, stripePrice);
-									console.log(bool);
+									bool = checkStillAvailable(ot, formData, formElement, e, eventData, stripePrice);
+
 									// if (bool === true){
 									// 	handlepayment(ot, formData, formElement, e, eventData, stripePrice);
 									// } else {
@@ -5551,12 +5552,13 @@ return /******/ (function(modules) { // webpackBootstrap
 									// }
 						}
 					});
+					console.log(bool);
 				}
 	    });
 
 			function checkStillAvailable(ot, formData, formElement, e, eventData, stripePrice){
 				var args = {};
-		    if (getConfig().project_id) args.project_id = getConfig().project_id
+
 		    if (getConfig().resources) args.resources = getConfig().resources
 				args.from = eventData.starttime;
 				args.to = eventData.endtime;
