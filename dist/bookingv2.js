@@ -5573,6 +5573,7 @@ return /******/ (function(modules) { // webpackBootstrap
 					// 	 return true;
 					//  }
 				 // }
+				 alert('Unfortunately this slot has now been taken. Please go back and choose another.')
 				 throw triggerError(['Unfortunately this slot has now been taken. Please go back and choose another.']);
 			 }).catch(function(response){
 				 utils.doCallback('fetchAvailabilityFailed', response);
