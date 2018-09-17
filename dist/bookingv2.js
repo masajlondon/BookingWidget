@@ -5527,7 +5527,6 @@ return /******/ (function(modules) { // webpackBootstrap
 				var goodBookingVoucher = 0;
 
 				var googlerequest;
-				var bool;
 				var stripePrice;
 				var voucherRequest = new Object();
 				voucherRequest.voucher = formData.voip;
@@ -5543,9 +5542,8 @@ return /******/ (function(modules) { // webpackBootstrap
 										console.log(data);
 										stripePrice = data;
 									}
-									bool = checkStillAvailable(ot, formData, formElement, e, eventData, stripePrice);
-									console.log(bool);
-
+									var bool = checkStillAvailable(ot, formData, formElement, e, eventData, stripePrice);
+									// console.log(bool);
 									// if (bool === true){
 									// 	handlepayment(ot, formData, formElement, e, eventData, stripePrice);
 									// } else {
@@ -5556,12 +5554,12 @@ return /******/ (function(modules) { // webpackBootstrap
 				}
 	    });
 
-			function checkStillAvailable(ot, formData, formElement, e, eventData, stripePrice){
+			var checkStillAvailable = function(ot, formData, formElement, e, eventData, stripePrice){
 				var args = {};
-
+		    if (getConfig().project_id) args.project_id = getConfig().project_id
 		    if (getConfig().resources) args.resources = getConfig().resources
-				args.from = eventData.start._i;
-				args.to = eventData.end._i;
+				args.from = eventData.starttime;
+				args.to = eventData.endtime;
 				args.timeslot_increments = '15 minutes';
 
 				sdk
@@ -5576,12 +5574,10 @@ return /******/ (function(modules) { // webpackBootstrap
 				 for (i = 0; i < response.data.length; i++) {
 					 if (response.data[i].start.substring(0, response.data[i].start.indexOf('+')) === eventData.start.format().substring(0, eventData.start.format().indexOf('+')) && response.data[i].end.substring(0, response.data[i].end.indexOf('+')) === eventData.end.format().substring(0, eventData.end.format().indexOf('+'))){
 						 console.log(eventData.start.format().substring(0, eventData.start.format().indexOf('+')));
-						 console.log('handling payment');
 						 handlepayment(ot, formData, formElement, e, eventData, stripePrice);
 						 return true;
 					 }
 				 }
-				 console.log('got to end of for loop');
 			 }).catch(function(response){
 				 utils.doCallback('fetchAvailabilityFailed', response);
 				 hideLoadingScreen();
