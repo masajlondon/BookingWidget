@@ -5573,7 +5573,8 @@ return /******/ (function(modules) { // webpackBootstrap
 						 return true;
 					 }
 				 }
-				 console.log('got to end of for loop');
+				 hideLoadingScreen();
+				 utils.doCallback('fetchAvailabilityFailed', response);
 			 }).catch(function(response){
 				 utils.doCallback('fetchAvailabilityFailed', response);
 				 hideLoadingScreen();
