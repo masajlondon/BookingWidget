@@ -5584,6 +5584,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				 utils.doCallback('fetchAvailabilityFailed', response);
 				 hideLoadingScreen();
 			 });
+			 console.log('got to end of stillavailable');
 			};
 
 			var handlepayment = function(ot, formData, formElement, e, eventData, bookingVoucherPrice){
