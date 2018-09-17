@@ -5543,12 +5543,7 @@ return /******/ (function(modules) { // webpackBootstrap
 										stripePrice = data;
 									}
 									var bool = checkStillAvailable(ot, formData, formElement, e, eventData, stripePrice);
-									// console.log(bool);
-									// if (bool === true){
-									// 	handlepayment(ot, formData, formElement, e, eventData, stripePrice);
-									// } else {
-									// 	hideLoadingScreen();
-									// }
+
 						}
 					});
 				}
@@ -5578,6 +5573,7 @@ return /******/ (function(modules) { // webpackBootstrap
 						 return true;
 					 }
 				 }
+				 console.log('got to end of for loop');
 			 }).catch(function(response){
 				 utils.doCallback('fetchAvailabilityFailed', response);
 				 hideLoadingScreen();
