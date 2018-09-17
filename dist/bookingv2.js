@@ -5560,8 +5560,8 @@ return /******/ (function(modules) { // webpackBootstrap
 				var args = {};
 
 		    if (getConfig().resources) args.resources = getConfig().resources
-				args.from = eventData.starttime;
-				args.to = eventData.endtime;
+				args.from = eventData.start._i;
+				args.to = eventData.end._i;
 				args.timeslot_increments = '15 minutes';
 
 				sdk
